@@ -20,6 +20,11 @@ window.onload = function () {
         squares[i].onclick = function () {
             var index = this.getAttribute("data-index");
 
+            // Exercise 6 - dont let them change a square that is already taken
+            if (gameState[index] != "") {
+                return;
+            }
+
             this.innerHTML = turn;
             this.classList.add(turn);
             gameState[index] = turn;
